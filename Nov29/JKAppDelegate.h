@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface JKAppDelegate : UIResponder <UIApplicationDelegate>
+@class JKView;
+@class JKViewController;
+
+@interface JKAppDelegate : UIResponder <UIApplicationDelegate>{
+    MPMoviePlayerController *controller;
+	JKView *view;
+    JKViewController *vc;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

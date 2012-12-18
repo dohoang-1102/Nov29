@@ -16,6 +16,12 @@
 		95B31E04168022F200784CDE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B31E03168022F200784CDE /* Default.png */; };
 		95B31E06168022F200784CDE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B31E05168022F200784CDE /* Default@2x.png */; };
 		95B31E08168022F200784CDE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B31E07168022F200784CDE /* Default-568h@2x.png */; };
+		95B31E0F1680237200784CDE /* TomAndJerry.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 95B31E0E1680237200784CDE /* TomAndJerry.mp4 */; };
+		95B31E161680252A00784CDE /* JKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B31E151680252A00784CDE /* JKView.m */; };
+		95B31E181680266400784CDE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B31E171680266400784CDE /* MediaPlayer.framework */; };
+		95B31E1A1680270900784CDE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B31E191680270900784CDE /* Icon.png */; };
+		95B31E1C1680279D00784CDE /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B31E1B1680279D00784CDE /* Icon@2x.png */; };
+		95B31E2316802A9800784CDE /* JKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B31E2216802A9800784CDE /* JKViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,14 @@
 		95B31E03168022F200784CDE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		95B31E05168022F200784CDE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		95B31E07168022F200784CDE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		95B31E0E1680237200784CDE /* TomAndJerry.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TomAndJerry.mp4; sourceTree = "<group>"; };
+		95B31E141680252A00784CDE /* JKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKView.h; sourceTree = "<group>"; };
+		95B31E151680252A00784CDE /* JKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKView.m; sourceTree = "<group>"; };
+		95B31E171680266400784CDE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		95B31E191680270900784CDE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		95B31E1B1680279D00784CDE /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		95B31E2116802A9800784CDE /* JKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKViewController.h; sourceTree = "<group>"; };
+		95B31E2216802A9800784CDE /* JKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B31E181680266400784CDE /* MediaPlayer.framework in Frameworks */,
 				95B31DF2168022F200784CDE /* UIKit.framework in Frameworks */,
 				95B31DF4168022F200784CDE /* Foundation.framework in Frameworks */,
 				95B31DF6168022F200784CDE /* CoreGraphics.framework in Frameworks */,
@@ -51,6 +66,7 @@
 		95B31DE2168022F200784CDE = {
 			isa = PBXGroup;
 			children = (
+				95B31E171680266400784CDE /* MediaPlayer.framework */,
 				95B31DF7168022F200784CDE /* Nov29 */,
 				95B31DF0168022F200784CDE /* Frameworks */,
 				95B31DEE168022F200784CDE /* Products */,
@@ -81,6 +97,10 @@
 				95B31E00168022F200784CDE /* JKAppDelegate.h */,
 				95B31E01168022F200784CDE /* JKAppDelegate.m */,
 				95B31DF8168022F200784CDE /* Supporting Files */,
+				95B31E141680252A00784CDE /* JKView.h */,
+				95B31E151680252A00784CDE /* JKView.m */,
+				95B31E2116802A9800784CDE /* JKViewController.h */,
+				95B31E2216802A9800784CDE /* JKViewController.m */,
 			);
 			path = Nov29;
 			sourceTree = "<group>";
@@ -88,6 +108,9 @@
 		95B31DF8168022F200784CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				95B31E1B1680279D00784CDE /* Icon@2x.png */,
+				95B31E191680270900784CDE /* Icon.png */,
+				95B31E0E1680237200784CDE /* TomAndJerry.mp4 */,
 				95B31DF9168022F200784CDE /* Nov29-Info.plist */,
 				95B31DFA168022F200784CDE /* InfoPlist.strings */,
 				95B31DFD168022F200784CDE /* main.m */,
@@ -155,6 +178,9 @@
 				95B31E04168022F200784CDE /* Default.png in Resources */,
 				95B31E06168022F200784CDE /* Default@2x.png in Resources */,
 				95B31E08168022F200784CDE /* Default-568h@2x.png in Resources */,
+				95B31E0F1680237200784CDE /* TomAndJerry.mp4 in Resources */,
+				95B31E1A1680270900784CDE /* Icon.png in Resources */,
+				95B31E1C1680279D00784CDE /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +193,8 @@
 			files = (
 				95B31DFE168022F200784CDE /* main.m in Sources */,
 				95B31E02168022F200784CDE /* JKAppDelegate.m in Sources */,
+				95B31E161680252A00784CDE /* JKView.m in Sources */,
+				95B31E2316802A9800784CDE /* JKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

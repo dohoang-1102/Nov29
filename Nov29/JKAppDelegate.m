@@ -7,16 +7,64 @@
 //
 
 #import "JKAppDelegate.h"
+#import "JKView.h"
+#import "JKViewController.h"
 
 @implementation JKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+	// Override point for customization after application launch.
+	NSBundle *bundle = [NSBundle mainBundle];
+	if (bundle == nil) {
+		NSLog(@"Could not access main bundle.");
+		return YES;
+	}
+    
+	NSString *filename = [bundle pathForResource: @"TomAndJerry" ofType: @"mp4"];
+	if (filename == nil) {
+		NSLog(@"could not find file sneeze.m4v");
+		return YES;
+	}
+    
+	NSURL *url = [NSURL fileURLWithPath: filename];
+	if (url == nil) {
+		NSLog(@"could not create URL for file %@", filename);
+		return YES;
+	}
+    
+	controller = [[MPMoviePlayerController alloc] init];
+	if (controller == nil) {
+		NSLog(@"could not create MPMoviePlayerController");
+		return YES;
+	}
+    
+	controller.shouldAutoplay = NO; //don't start spontaneously
+	controller.scalingMode = MPMovieScalingModeNone;
+	controller.controlStyle = MPMovieControlStyleFullscreen;
+	controller.movieSourceType = MPMovieSourceTypeFile; //vs. stream
+	[controller setContentURL: url];
+    
+	NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+	
+	[center
+     addObserver: self
+     selector: @selector(playbackDidFinish:)
+     name: MPMoviePlayerPlaybackDidFinishNotification
+     object: controller
+     ];
+    
+	UIScreen *screen = [UIScreen mainScreen];
+	view = [[JKView alloc] initWithFrame: screen.applicationFrame];
+	self.window = [[UIWindow alloc] initWithFrame: screen.bounds];
+	//self.window.backgroundColor = [UIColor whiteColor];
+    
+    vc = [[JKViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = vc;
+    vc.view = view;
+	//[self.window addSubview: view];
+	[self.window makeKeyAndVisible];
+	return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -45,5 +93,27 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark -
+#pragma mark Application delegate is target of button.
+
+- (void) touchUpInside: (id) sender {
+	//sender is the button.
+	controller.view.frame = view.frame;
+	[view removeFromSuperview];
+	[self.window addSubview: controller.view];
+	[controller play];
+}
+
+#pragma mark -
+#pragma mark Application delegate is observer of MPMoviePlayerController.
+
+- (void) playbackDidFinish: (NSNotification *) notification {
+	//notification.object is the movie player controller.
+	[controller.view removeFromSuperview];
+	[UIApplication sharedApplication].statusBarHidden = NO;
+	[self.window addSubview: view];
+}
+
 
 @end
