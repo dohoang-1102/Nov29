@@ -43,7 +43,9 @@
 	controller.scalingMode = MPMovieScalingModeNone;
 	controller.controlStyle = MPMovieControlStyleFullscreen;
 	controller.movieSourceType = MPMovieSourceTypeFile; //vs. stream
+//    controller.
 	[controller setContentURL: url];
+//    [controller allow]
     
 	NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
 	
@@ -102,6 +104,8 @@
 	controller.view.frame = view.frame;
 	[view removeFromSuperview];
 	[self.window addSubview: controller.view];
+//    [[controller view] setTransform:CGAffineTransformMakeRotation(M_PI / 2)];
+//    [[controller view] setTransform:CGAffineTransformConcat([controller view].transform,CGAffineTransformMakeScale(1.7, 0.7))];
 	[controller play];
 }
 
